@@ -1,9 +1,13 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Open-Sans", Arial, sans-serif;
   margin: 0;
   padding: 0;
+  color: #f7f8ec;
 }
 
+a {
+    color: #f7f8ec;
+  }
 
 /** NAV HEADER **/
 header img {
@@ -116,6 +120,7 @@ main {
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  background-color: #0F1732;
 }
 
 section {
@@ -126,12 +131,11 @@ section {
 }
 
 h1, h2 {
-  color: #232324;
+  color: #ffffff;
 }
 
 button {
   background-color: #0F1732;
-  color: #ffffff;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -154,7 +158,7 @@ li {
 
 p a {
   text-decoration: none;
-  color: #0F1732;
+  color: #ffffff;
 }
 
 a:hover {
@@ -163,7 +167,6 @@ a:hover {
 
 footer {
   background-color: #0F1732;
-  color: #ffffff;
   padding: 10px;
   text-align: center;
   clear: both;
@@ -180,8 +183,7 @@ footer li {
   margin-right: 20px;
 }
 
-footer a {
-    color: white;
+footer ul li a {
     text-decoration: none;
     text-transform: lowercase;
 }
