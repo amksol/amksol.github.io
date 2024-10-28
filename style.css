@@ -5,7 +5,7 @@ body {
 }
 
 header {
-  background-color: #007bff;
+  background-color: #0F1732;
   color: #ffffff;
   padding: 20px;
   text-align: center;
@@ -24,18 +24,18 @@ main {
 }
 
 section {
-  background-color: #f7f7f7;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* padding: 20px;
+  margin-bottom: 20px; */
+  max-width: 800px;
+  width: 100%;
 }
 
 h1, h2 {
-  color: #007bff;
+  color: #232324;
 }
 
 button {
-  background-color: #007bff;
+  background-color: #0F1732;
   color: #ffffff;
   padding: 10px 20px;
   border: none;
@@ -59,7 +59,7 @@ li {
 
 a {
   text-decoration: none;
-  color: #007bff;
+  color: #0F1732;
 }
 
 a:hover {
@@ -67,7 +67,7 @@ a:hover {
 }
 
 footer {
-  background-color: #007bff;
+  background-color: #0F1732;
   color: #ffffff;
   padding: 10px;
   text-align: center;
