@@ -4,6 +4,8 @@ body {
   padding: 0;
 }
 
+
+/** NAV HEADER **/
 header img {
   width: 80px;
   height: 80px;
@@ -11,14 +13,12 @@ header img {
 
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   background-color: #ffffff;
   text-align: center;
   padding-top: 1.618em;
   padding-bottom: 1.618em;
-  margin-left: 120px;
-  margin-right: 120px;
 }
 
 .navigation {
@@ -43,7 +43,74 @@ header {
 .navigation a:hover {
   color: #0F1732;
 }
+
+header button {
+    display: none;
+}
+
+header button svg {
+    width: 2em;
+    height: 2em;
+}
+
+/* ****** ****** */
+/* Responsiv design */
+@media only screen and (max-width: 768px) {
+    header {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #ffffff;
+        text-align: center;
+        padding-top: 1.618em;
+        padding-bottom: 1.618em;
+    }
+    
+    .toggle-menu {
+      display: block;
+      background-color: #ffffff;
+      border: none;
+      padding: 10px;
+      font-size: 18px;
+      cursor: pointer;
+    }
   
+    .navigation {
+      display: none;
+    }
+  
+    .navigation.show {
+      display: flex;
+      position: absolute;
+      top: 135px;
+      left: 0;
+      width: 100%;
+      background-color: #ffffff;
+      padding: 20px;
+      border: 1px solid #dddddd;
+      flex-direction: column;
+      text-align: left;
+    }
+  
+    .navigation li {
+      margin-bottom: 10px;
+    }
+  
+    .navigation a {
+      font-size: 16px;
+    }
+  }
+  
+  /* Toggle menu */
+  .toggle-menu:hover {
+    background-color: #f7f7f7;
+  }
+  
+  .toggle-menu:focus {
+    outline: none;
+  }
+
+/** MAIN STYLES **/
 main {
   display: flex;
   flex-direction: column;
