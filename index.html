@@ -52,70 +52,82 @@
       navigation.classList.toggle('show');
     });
   </script>
-  <!-- test data -->
-  <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
-  <stripe-pricing-table pricing-table-id="prctbl_1QFFqOKVx4lZniIc2NdCYlyi"
-    publishable-key="pk_test_51NBYaWKVx4lZniIcP8d263oIUr1RbTSTrw2e8ewcqzli1YRJ5amyHuBKXq7wxa6nGTUIxGimMDrIGGfO7eTgk9yR00Ag7BG4MM">
-  </stripe-pricing-table>
-  <!-- <script async src=https://js.stripe.com/v3/pricing-table.js></script>
-    <stripe-pricing-table pricing-table-id=prctbl_1QD3wHDGbIIUHhsdTdO3CPSl 
-    publishable-key=pk_live_51LSieqDGbIIUHhsd9SEOYVoNxnc0p5GfI3ilIdsnwqLU5HXdS9R8mnAbkpKbOxtKEdayNrfjWzjf0jXgrwBKIMzZ00owpUY4AW>
-    </stripe-pricing-table> -->
+
   <main>
     <section>
-      <h1>BLI MÅNADSGIVARE</h1>
+      <span class="text-fit">
+        <span><span style="font-weight: bold; font-style: italic;">BLI MÅNADSGIVARE</span></span>
+        <span aria-hidden="true" style="font-weight: bold; font-style: italic;">BLI MÅNADSGIVARE</span>
+      </span>
+      <h1></h1>
       <p>Tillsammans är du med och gör radikalt motstånd möjligt!
         <br>
         ✔️ Maximal politisk påverkan per krona
         <br>
         ✔️ Handling i proportion till klimatkatastrofen
         <br>
-        ✔️Ändra eller avsluta när du vill
+        ✔️ Ändra eller avsluta när du vill
+      </p>
+      <section> <!-- live data -->
+        <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+        <stripe-pricing-table pricing-table-id="prctbl_1QFFaMKVx4lZniIc0O3dfawk"
+        publishable-key="pk_live_51NBYaWKVx4lZniIcpQPftOT4II5CqYijmDDiE3pJDSkDJFJ6hny40GpWXYOKLMGnhSIqx1maYFgS0JcgLG6R3zYa00uUUOLL6m">
+        </stripe-pricing-table>
+      </section>
+    </section>
+    <section>
+      <p><i>Du kan alltid välja ett valfritt belopp på vår <a style="text-decoration: underline;" target="_blank"
+            href="https://chuffed.org/project/aterstallvatmarker">Chuffed-insamling här</a>.
+        </i></p>
+    </section>
+    <section>
+      <h2>Våra givare</h2>
+      <p>Återställ Våtmarker är helt finansierat av generösa privatpersoner. Vi tar inte emot några pengar från företag
+        eller staten, vi står upp mot dem! Tack vare ditt stöd kan vi fortsätta arbeta oberoende.</p>
+      </p>
+
+      <section>
+        <img src="01.webp" alt="Motorvägsaktion Återställ Våtmarker">
+      </section>
+      <h2>Din gåva</h2>
+      <p>Pengarna används där de har störst politisk påverkan och
+        går oavkortat till arbetet för en kärleksfullare och mer demokratisk framtid.
+
+        Ditt stöd möjliggör att vi kan:
+        <br>
+        ✔️ Stötta personer som sagt upp sig från jobb eller utbildning för att kämpa för mänskligheten.
+        <br>
+        ✔️ Köpa in aktionsmaterial, såsom spadar, brandsläckare & banderoller.
+        <br>
+        ✔️ Hålla föreläsningar samt träningar runt om i landet i fredligt motstånd.
       </p>
 
     </section>
-    <section class="flex_2_columns">
-      <div>
-        <h1>Våra givare</h1>
-        <p>Återställ Våtmarker är helt finansierat av generösa privatpersoner. Vi tar inte emot några pengar från
-          företag
-          eller staten, vi står upp mot dem! Tack vare ditt stöd kan vi fortsätta arbeta oberoende.</p>
-        <i>Du kan alltid ge en engångsgåva eller bli månadsgivare med en valfri summa på vår Chuffed-insamling. <a
-            style="text-decoration: underline;" target="_blank"
-            href="https://chuffed.org/project/aterstallvatmarker">Klicka här för att komma dit!</a></i>
-        </p>
-        <h2>Din gåva</h2>
-        <p>Pengarna används där de har störst politisk påverkan och
-          går oavkortat till arbetet för en kärleksfullare och mer demokratisk framtid.
-
-          Ditt stöd möjliggör att vi kan:
-          <br>
-          ✔️ Stötta personer som sagt upp sig från jobb eller utbildning för att kämpa för mänskligheten.
-          <br>
-          ✔️ Köpa in aktionsmaterial, såsom spadar, brandsläckare & banderoller.
-          <br>
-          ✔️ Hålla föreläsningar samt träningar runt om i landet i fredligt motstånd.
-        </p>
-      </div>
-
-    </section>
-    <section>
-      <iframe width="100%" height="380" src="https://chuffed.org/iframe/92468/25aae1" frameborder="0" allowfullscreen=""
-        style="max-width:310px;border:0px solid #fff;margin:0 auto;/* overflow: hidden; */" scrolling="no"></iframe>
-    </section>
-    <div class="fullwidth"><img src="05.webp" alt="Återställ Våtmarker och Elokapinas aktion mot Finlands riksdag">
-    </div>
-    <section>
-      <h1>Tack för din gåva!</h1>
+    <!-- <section>
+      <h2>Tack för din gåva!</h2>
       <p>
         Om du har några frågor eller funderingar, hör av dig till oss på
         <a target="_blank" href="mailto:givarservice@aterstallvatmarker.se">givarservice@aterstallvatmarker.se</a>.
         För att avsluta ditt givande eller ändra storlek på ditt månadsbelopp, <a style="text-decoration: underline;"
           target="_blank" href="https://stod.aterstallvatmarker.se/p/login/5kA8xO5U4cdpe6Q000">klicka här</a>.
+    </section> -->
+    <section>
+      <h2>Fler sätt att ge</h2>
+    </section>
+    <section class="flex_2_columns">
+      <div style="      flex-basis: 50%;
+      flex-grow: 1;">
+        <h2>Engångsgåva</h2>
+        <p> <i>Du kan alltid ge en engångsgåva eller bli månadsgivare med en valfri summa på vår Chuffed-insamling. <a
+              style="text-decoration: underline;" target="_blank"
+              href="https://chuffed.org/project/aterstallvatmarker">Klicka här för att komma dit!</a></i></p>
+      </div>
+      <div><iframe width="100%" height="380" src="https://chuffed.org/iframe/92468/25aae1" frameborder="0"
+          allowfullscreen="" style="max-width:310px;border:0px solid #fff;margin:0 auto;/* overflow: hidden; */"
+          scrolling="no"></iframe>
+      </div>
     </section>
     <section>
-      <h1>Fler sätt att ge</h1>
-      <h2>Engångsgåva</h2>
       <h2>Ge en filantropisk gåva</h2>
       <p>För större donationer, ta kontakt med oss på <a target="_blank"
           href="mailto:givarservice@aterstallvatmarker.se">givarservice@aterstallvatmarker.se</a> för att diskutera hur
@@ -126,7 +138,7 @@
           href="mailto:givarservice@aterstallvatmarker.se">givarservice@aterstallvatmarker.se</a> så hjälper vi dig.</p>
     </section>
     <section>
-      <h1>Kontakta oss</h1>
+      <h2>Kontakta oss</h2>
       <p>Har du frågor eller vill ändra ditt givande så är du alltid välkommen att kontakta oss på
         givarservice@aterstallvatmarker.se.</p>
     </section>
