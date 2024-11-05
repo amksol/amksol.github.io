@@ -73,8 +73,9 @@ ul.checklist {
 ul.checklist li {
   margin-bottom: 10px;
   text-indent: -30px;
-
+  font-size: 1.1rem;
 }
+
 ul.checklist li::before {
   vertical-align: middle;
   content: url(check.svg);
@@ -163,6 +164,13 @@ footer ul li a {
 
   .navigation a {
     font-size: 1rem;
+  }
+  /** responsive stripe **/
+  .PriceColumn {
+    order: 2;
+  }
+  .PriceColumn.is-highlight {
+    order: 1;
   }
 }
 
