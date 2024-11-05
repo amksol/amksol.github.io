@@ -6,31 +6,25 @@
   --captured-length: initial;
   --support-sentinel: var(--captured-length, 9999px);
 
-  & > [aria-hidden] {
+  &>[aria-hidden] {
     visibility: hidden;
   }
 
-  & > :not([aria-hidden]) {
+  &> :not([aria-hidden]) {
     flex-grow: 1;
     container-type: inline-size;
 
     --captured-length: 100cqi;
     --available-space: var(--captured-length);
 
-    & > * {
+    &>* {
       --support-sentinel: inherit;
       --captured-length: 100cqi;
-      --ratio: tan(atan2(
-        var(--available-space),
-        var(--available-space) - var(--captured-length)
-      ));
-      --font-size: clamp(
-        1em,
-        1em * var(--ratio),
-        var(--max-font-size, infinity * 1px)
-        -
-        var(--support-sentinel)
-      );
+      --ratio: tan(atan2(var(--available-space),
+            var(--available-space) - var(--captured-length)));
+      --font-size: clamp(1em,
+          1em * var(--ratio),
+          var(--max-font-size, infinity * 1px) - var(--support-sentinel));
       inline-size: var(--available-space);
 
       &:not(.text-fit) {
@@ -63,16 +57,21 @@
   initial-value: 0px;
   inherits: true;
 }
+
 /** end fit to width text **/
 /** responsive images **/
 img {
   max-width: 100%;
 }
+
 img[width] {
-  width: auto; /* Defer to max-width */
+  width: auto;
+  /* Defer to max-width */
 }
+
 img[width][height] {
-  height: auto; /* Preserve aspect ratio */
+  height: auto;
+  /* Preserve aspect ratio */
 }
 
 /* Let SVG scale without boundaries */
@@ -81,6 +80,7 @@ img[src$=".svg"] {
   height: auto;
   max-width: none;
 }
+
 /** end **/
 
 body {
@@ -221,11 +221,16 @@ section {
   width: 100%;
 }
 
+p {
+  font-size: 1.1rem;
+  margin-block-start: 0.3em;
+}
+
 h1 {
   --minFontSize: 32px;
   --maxFontSize: 200px;
   --scaler: 10vw;
-  font-size: clamp( var(--minFontSize), var(--scaler), var(--maxFontSize) );
+  font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));
 
   margin-block-start: 0.1em;
   margin-block-end: 0.1em;
@@ -233,6 +238,15 @@ h1 {
 
 h2 {
   font-size: 1.5rem;
+  margin-block-end: 0.3em;
+}
+
+mark {
+  background-color: #ffdf1e;
+  color: black;
+  line-height: 170%;
+  padding: 3px;
+  font-size: 1.2rem;
 }
 
 button {
@@ -247,15 +261,23 @@ button:hover {
   background-color: #0056b3;
 }
 
-ul {
+ul.checklist {
   list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
-li {
+ul.checklist li {
   margin-bottom: 10px;
+  text-indent: -30px;
+
 }
+ul.checklist li::before {
+  vertical-align: middle;
+  content: url(check.svg);
+  width: 1rem;
+  height: 1rem;
+  margin-right: .5rem;
+}
+
 
 p a {
   text-decoration: none;
