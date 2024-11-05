@@ -1,88 +1,4 @@
-/** fit to width text credit https://kizu.dev/fit-to-width/ **/
-.text-fit {
-  display: flex;
-  container-type: inline-size;
-
-  --captured-length: initial;
-  --support-sentinel: var(--captured-length, 9999px);
-
-  &>[aria-hidden] {
-    visibility: hidden;
-  }
-
-  &> :not([aria-hidden]) {
-    flex-grow: 1;
-    container-type: inline-size;
-
-    --captured-length: 100cqi;
-    --available-space: var(--captured-length);
-
-    &>* {
-      --support-sentinel: inherit;
-      --captured-length: 100cqi;
-      --ratio: tan(atan2(var(--available-space),
-            var(--available-space) - var(--captured-length)));
-      --font-size: clamp(1em,
-          1em * var(--ratio),
-          var(--max-font-size, infinity * 1px) - var(--support-sentinel));
-      inline-size: var(--available-space);
-
-      &:not(.text-fit) {
-        display: block;
-        font-size: var(--font-size);
-
-        @container (inline-size > 0) {
-          white-space: nowrap;
-        }
-      }
-
-      &.text-fit {
-        --captured-length2: var(--font-size);
-        font-variation-settings:
-          'opsz'
-          tan(atan2(var(--captured-length2), 1px));
-      }
-    }
-  }
-}
-
-@property --captured-length {
-  syntax: "<length>";
-  initial-value: 0px;
-  inherits: true;
-}
-
-@property --captured-length2 {
-  syntax: "<length>";
-  initial-value: 0px;
-  inherits: true;
-}
-
-/** end fit to width text **/
-/** responsive images **/
-img {
-  max-width: 100%;
-}
-
-img[width] {
-  width: auto;
-  /* Defer to max-width */
-}
-
-img[width][height] {
-  height: auto;
-  /* Preserve aspect ratio */
-}
-
-/* Let SVG scale without boundaries */
-img[src$=".svg"] {
-  width: 100%;
-  height: auto;
-  max-width: none;
-}
-
-/** end **/
-
+/** MAIN STYLES **/
 body {
   font-size: calc(15px + 0.390625vw);
   font-family: "Open-Sans", Arial, sans-serif;
@@ -95,117 +11,6 @@ a {
   color: #f7f8ec;
 }
 
-/** NAV HEADER **/
-header img {
-  width: 80px;
-  height: 80px;
-}
-
-header {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #ffffff;
-  text-align: center;
-  padding-top: 1.618em;
-  padding-bottom: 1.618em;
-}
-
-.navigation {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: space-between;
-}
-
-.navigation li {
-  margin-right: 20px;
-}
-
-.navigation a {
-  color: #535534;
-  text-decoration: none;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  font-size: 1.1rem;
-}
-
-.navigation a:hover {
-  color: #0F1732;
-}
-
-header button {
-  display: none;
-}
-
-header button svg {
-  width: 2em;
-  height: 2em;
-}
-
-.flex_2_columns {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-/* ****** ****** */
-/* Responsiv design */
-@media only screen and (max-width: 768px) {
-  header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #ffffff;
-    text-align: center;
-    padding-top: 1.618em;
-    padding-bottom: 1.618em;
-  }
-
-  .toggle-menu {
-    display: block;
-    background-color: #ffffff;
-    border: none;
-    padding: 10px;
-    font-size: 1.1rem;
-    cursor: pointer;
-  }
-
-  .navigation {
-    display: none;
-  }
-
-  .navigation.show {
-    display: flex;
-    position: absolute;
-    top: 135px;
-    left: 0;
-    width: 100%;
-    background-color: #ffffff;
-    padding: 20px;
-    border: 1px solid #dddddd;
-    flex-direction: column;
-    text-align: left;
-  }
-
-  .navigation li {
-    margin-bottom: 10px;
-  }
-
-  .navigation a {
-    font-size: 1rem;
-  }
-}
-
-/* Toggle menu */
-.toggle-menu:hover {
-  background-color: #f7f7f7;
-}
-
-.toggle-menu:focus {
-  outline: none;
-}
-
-/** MAIN STYLES **/
 main {
   display: flex;
   flex-direction: column;
@@ -309,4 +114,203 @@ footer li {
 footer ul li a {
   text-decoration: none;
   text-transform: lowercase;
+}
+
+#chuffed_frame {
+  margin-left: 10px;
+}
+/* Responsiv design */
+@media only screen and (max-width: 768px) {
+  header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffffff;
+    text-align: center;
+    padding-top: 1.618em;
+    padding-bottom: 1.618em;
+  }
+
+  .toggle-menu {
+    display: block;
+    background-color: #ffffff;
+    border: none;
+    padding: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+
+  .navigation {
+    display: none;
+  }
+
+  .navigation.show {
+    display: flex;
+    position: absolute;
+    top: 135px;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #dddddd;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .navigation li {
+    margin-bottom: 10px;
+  }
+
+  .navigation a {
+    font-size: 1rem;
+  }
+}
+
+/** fit to width text credit https://kizu.dev/fit-to-width/ **/
+.text-fit {
+  display: flex;
+  container-type: inline-size;
+
+  --captured-length: initial;
+  --support-sentinel: var(--captured-length, 9999px);
+
+  &>[aria-hidden] {
+    visibility: hidden;
+  }
+
+  &> :not([aria-hidden]) {
+    flex-grow: 1;
+    container-type: inline-size;
+
+    --captured-length: 100cqi;
+    --available-space: var(--captured-length);
+
+    &>* {
+      --support-sentinel: inherit;
+      --captured-length: 100cqi;
+      --ratio: tan(atan2(var(--available-space),
+            var(--available-space) - var(--captured-length)));
+      --font-size: clamp(1em,
+          1em * var(--ratio),
+          var(--max-font-size, infinity * 1px) - var(--support-sentinel));
+      inline-size: var(--available-space);
+
+      &:not(.text-fit) {
+        display: block;
+        font-size: var(--font-size);
+
+        @container (inline-size > 0) {
+          white-space: nowrap;
+        }
+      }
+
+      &.text-fit {
+        --captured-length2: var(--font-size);
+        font-variation-settings:
+          'opsz'
+          tan(atan2(var(--captured-length2), 1px));
+      }
+    }
+  }
+}
+
+@property --captured-length {
+  syntax: "<length>";
+  initial-value: 0px;
+  inherits: true;
+}
+
+@property --captured-length2 {
+  syntax: "<length>";
+  initial-value: 0px;
+  inherits: true;
+}
+
+/** end fit to width text **/
+/** responsive images **/
+img {
+  max-width: 100%;
+}
+
+img[width] {
+  width: auto;
+  /* Defer to max-width */
+}
+
+img[width][height] {
+  height: auto;
+  /* Preserve aspect ratio */
+}
+
+/* Let SVG scale without boundaries */
+img[src$=".svg"] {
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+
+/** fit text to width end **/
+
+/** NAV HEADER **/
+header img {
+  width: 80px;
+  height: 80px;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #ffffff;
+  text-align: center;
+  padding-top: 1.618em;
+  padding-bottom: 1.618em;
+}
+
+.navigation {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation li {
+  margin-right: 20px;
+}
+
+.navigation a {
+  color: #535534;
+  text-decoration: none;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+}
+
+.navigation a:hover {
+  color: #0F1732;
+}
+
+header button {
+  display: none;
+}
+
+header button svg {
+  width: 2em;
+  height: 2em;
+}
+
+.flex_2_columns {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* ****** ****** */
+
+/* Toggle menu */
+.toggle-menu:hover {
+  background-color: #f7f7f7;
+}
+
+.toggle-menu:focus {
+  outline: none;
 }
