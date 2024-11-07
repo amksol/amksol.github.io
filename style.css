@@ -120,59 +120,6 @@ footer ul li a {
 #chuffed_frame {
   margin-left: 10px;
 }
-/* Responsiv design */
-@media only screen and (max-width: 768px) {
-  header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #ffffff;
-    text-align: center;
-    padding-top: 1.618em;
-    padding-bottom: 1.618em;
-  }
-
-  .toggle-menu {
-    display: block;
-    background-color: #ffffff;
-    border: none;
-    padding: 10px;
-    font-size: 1.1rem;
-    cursor: pointer;
-  }
-
-  .navigation {
-    display: none;
-  }
-
-  .navigation.show {
-    display: flex;
-    position: absolute;
-    top: 135px;
-    left: 0;
-    width: 100%;
-    background-color: #ffffff;
-    padding: 20px;
-    border: 1px solid #dddddd;
-    flex-direction: column;
-    text-align: left;
-  }
-
-  .navigation li {
-    margin-bottom: 10px;
-  }
-
-  .navigation a {
-    font-size: 1rem;
-  }
-  /** responsive stripe **/
-  .PriceColumn {
-    order: 2;
-  }
-  .PriceColumn.is-highlight {
-    order: 1;
-  }
-}
 
 /** fit to width text credit https://kizu.dev/fit-to-width/ **/
 .text-fit {
@@ -321,4 +268,61 @@ header button svg {
 
 .toggle-menu:focus {
   outline: none;
+}
+
+/* Responsiv design */
+@media only screen and (max-width: 768px) {
+  header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffffff;
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+  header img {
+    width: 50px;
+    height: 50px;
+}
+  .toggle-menu {
+    display: block;
+    background-color: #ffffff;
+    border: none;
+    padding: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+
+  .navigation {
+    display: none;
+  }
+
+  .navigation.show {
+    display: flex;
+    position: absolute;
+    top: 95px;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #dddddd;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .navigation li {
+    margin-bottom: 10px;
+  }
+
+  .navigation a {
+    font-size: 1rem;
+  }
+  /** responsive stripe **/
+  .PriceColumn {
+    order: 2;
+  }
+  .PriceColumn.is-highlight {
+    order: 1;
+  }
 }
