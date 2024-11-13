@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bli månadsgivare - Återställ Våtmarker</title>
+    <meta name="author" content="Återställ Våtmarker">
+    <meta name="description"
+        content="Återställ Våtmarker är nu den mest omtalade klimatrörelsen i Sverige. Men det räcker inte att vara omtalad. Vi behöver fortsätta göra motstånd för att skapa verklig förändring. Därför behöver vi ditt stöd. Bli månadsgivare idag och stötta kampen för att stoppa utsläppen och fördjupa demokratin. Din hjälp är helt avgörande för framtiden.">
+    <meta property="og:title" content="Bli månadsgivare - Återställ Våtmarker">
+    <meta property="og:description"
+        content="Återställ Våtmarker är nu den mest omtalade klimatrörelsen i Sverige. Men det räcker inte att vara omtalad. Vi behöver fortsätta göra motstånd för att skapa verklig förändring. Därför behöver vi ditt stöd. Bli månadsgivare idag och stötta kampen för att stoppa utsläppen och fördjupa demokratin. Din hjälp är helt avgörande för framtiden.">
+    <meta property="og:image" content="https://donera.aterstallvatmarker.se/05.webp">
+    <meta property="og:url" content="donera.aterstallvatmarker.se">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="logo.webp">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7ZXLFKDYTG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-7ZXLFKDYTG');
+  </script>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KXDDQP56');</script>
+    <!-- End Google Tag Manager -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        // Listen for Stripe payment events or use your own custom event
+        stripe.on('checkout.session.completed', function (session) {
+            // Push the transaction data to the data layer
+            window.dataLayer.push({
+                event: 'purchase',
+                transactionId: session.id,
+                transactionTotal: session.amount_total / 100,  // Stripe returns the amount in cents
+                transactionCurrency: session.currency,
+                transactionProducts: session.line_items.map(item => ({
+                    productId: item.product_id,
+                    productName: item.name,
+                    productPrice: item.amount / 100,
+                    quantity: item.quantity
+                }))
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KXDDQP56" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header>
+        <a target="_blank" href="https://aterstallvatmarker.se/"><img alt="Logga" type="image/png" src="logo.webp"></a>
+        <button aria-label="menu" class="toggle-menu">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
+                <path d="M 0 9 L 0 11 L 50 11 L 50 9 Z M 0 24 L 0 26 L 50 26 L 50 24 Z M 0 39 L 0 41 L 50 41 L 50 39 Z">
+                </path>
+            </svg>
+        </button>
+        <ul class="navigation">
+            <li><a href="https://aterstallvatmarker.se/bli-aktiv/">Bli aktiv</a></li>
+            <li><a href="https://aterstallvatmarker.se/radda-grimsas/">Rädda Grimsås </a></li>
+            <li><a href="https://aterstallvatmarker.se/vatmarker-torv/">Våtmarker & Torv</a></li>
+            <li><a href="https://aterstallvatmarker.se/om-oss/">Om oss</a></li>
+            <li><a href="https://aterstallvatmarker.se/pressmeddelanden/">Press</a></li>
+        </ul>
+    </header>
+    <script>
+        const toggleMenu = document.querySelector('.toggle-menu');
+        const navigation = document.querySelector('.navigation');
+
+        toggleMenu.addEventListener('click', () => {
+            navigation.classList.toggle('show');
+        });
+    </script>
+
+    <main>
+        <section>
+            <span class="text-fit" style="width: 60%;">
+                <span><span style="font-weight: bold;">BLI MÅNADSGIVARE</span></span>
+                <span aria-hidden="true" style="font-weight: bold;">BLI MÅNADSGIVARE</span>
+            </span>
+            <h1></h1>
+            <p>Tillsammans är du med och gör radikalt motstånd möjligt!
+                <br><br>
+                <mark>Maximal politisk påverkan per krona</mark>
+                <br>
+
+                <mark>Handling i proportion till klimatkatastrofen</mark>
+                <br>
+                <mark>Ändra eller avsluta när du vill</mark>
+            </p>
+        </section>
+    </main><!-- test data -->
+    <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+    <stripe-pricing-table pricing-table-id="prctbl_1QFFqOKVx4lZniIc2NdCYlyi"
+        publishable-key="pk_test_51NBYaWKVx4lZniIcP8d263oIUr1RbTSTrw2e8ewcqzli1YRJ5amyHuBKXq7wxa6nGTUIxGimMDrIGGfO7eTgk9yR00Ag7BG4MM">
+    </stripe-pricing-table>
+    <main>
+        <section>
+            <p><i>Du kan alltid välja ett valfritt belopp på vår <a style="text-decoration: underline;" target="_blank"
+                        href="https://chuffed.org/project/aterstallvatmarker">Chuffed-insamling här</a>.
+                </i></p>
+        </section>
+        <section>
+            <h2>Våra givare</h2>
+            <p>Återställ Våtmarker är helt finansierat av generösa privatpersoner. Vi tar inte emot några pengar från
+                företag
+                eller staten, vi står upp mot dem! Tack vare ditt stöd kan vi fortsätta arbeta oberoende.</p>
+            </p>
+            <h2>Din gåva</h2>
+            <p>Pengarna används där de har störst politisk påverkan och
+                går oavkortat till arbetet för en kärleksfullare och mer demokratisk framtid.
+                <br><br>
+                Ditt stöd möjliggör att vi kan:
+            </p>
+            <ul class="checklist">
+                <li>Stötta personer som sagt upp sig från jobb eller utbildning för att kämpa för mänskligheten.</li>
+                <li>Köpa in aktionsmaterial, såsom spadar, brandsläckare & banderoller.</li>
+                <li>Hålla föreläsningar samt träningar runt om i landet i fredligt motstånd.</li>
+            </ul>
+        </section>
+        <section>
+            <img src="01_w.webp" alt="Motorvägsaktion Återställ Våtmarker">
+        </section>
+        <!-- <section>
+      <h2>Tack för din gåva!</h2>
+      <p>
+        Om du har några frågor eller funderingar, hör av dig till oss på
+        <a target="_blank" href="mailto:givarservice@aterstallvatmarker.se">givarservice@aterstallvatmarker.se</a>.
+        För att avsluta ditt givande eller ändra storlek på ditt månadsbelopp, <a style="text-decoration: underline;"
+          target="_blank" href="https://stod.aterstallvatmarker.se/p/login/5kA8xO5U4cdpe6Q000">klicka här</a>.
+    </section> -->
+        <section>
+            <h2>FLER SÄTT ATT GE</h2>
+        </section>
+        <section class="flex_2_columns">
+            <div style="flex-basis: 50%; flex-grow: 1;">
+                <h2>Engångsgåva</h2>
+                <p>Du kan alltid ge en stödjande gåva till vårt <strong>bankgiro: 652-6404</strong>, men även till vår
+                    Chuffed-insamling. <a style="text-decoration: underline;" target="_blank"
+                        href="https://chuffed.org/project/aterstallvatmarker">Klicka här för att komma dit!</a></p>
+                <h2>Automatisk överföring</h2>
+                <p>Ett enkelt sätt att börja ge är att gå in på din internetbank och göra en automatisk överföring till
+                    vårt
+                    <strong>bankgiro:
+                        652-6404.</strong>
+                </p>
+                <h2>Filantropi</h2>
+                <p>För större påverkan – ta kontakt med oss på <a target="_blank"
+                        href="mailto:givarservice@aterstallvatmarker.se">givarservice@aterstallvatmarker.se</a> för att
+                    diskutera
+                    hur din gåva kan komma till störst nytta.</p>
+            </div>
+            <div id="chuffed_frame"><iframe width="100%" height="380" src="https://chuffed.org/iframe/92468/25aae1"
+                    frameborder="0" allowfullscreen=""
+                    style="max-width:310px;border:0px solid #fff;margin:0 auto;/* overflow: hidden; */"
+                    scrolling="no"></iframe>
+            </div>
+        </section>
+
+
+        <section>
+            <h2>Kontakta oss</h2>
+            <p>Har du frågor eller vill ändra ditt givande så är du alltid välkommen att kontakta oss på
+                <a target="_blank"
+                    href="mailto:givarservice@aterstallvatmarker.se">givarservice@aterstallvatmarker.se</a>.
+                <br><br>
+                Redan givare? För att pausa eller ändra belopp - <a style="text-decoration: underline;" target="_blank"
+                    href="https://stod.aterstallvatmarker.se/p/login/5kA8xO5U4cdpe6Q000">klicka här</a>.
+                <br>
+                Givare sen innan november 2024 - <a style="text-decoration: underline;" target="_blank"
+                    href="https://aterstallvatmarker.se/din-gava">använd denna länk</a>.
+            </p>
+            </p>
+        </section>
+    </main>
+    <footer>
+
+        <ul>
+            <li><a target="_blank" href="https://aterstallvatmarker.se/">← tillbaka till aterstallvatmarker.se</a></li>
+        </ul>
+        <ul>
+            <li><a target="_blank" href="https://www.facebook.com/aterstallvatmarker/">Facebook</a></li>
+            <li><a target="_blank" href="https://x.com/vatmarker">Twitter/X</a></li>
+            <li><a target="_blank" href="https://www.instagram.com/aterstallvatmarker/">Instagram</a></li>
+            <li><a target="_blank" href="https://www.youtube.com/channel/UCOeAUXIww2pJemmD-6RjWBg">YouTube</a></li>
+            <li><a target="_blank" href="https://www.tiktok.com/@aterstallvatmarker">TikTok</a></li>
+            <li><a target="_blank" href="mailto:vatmarker@protonmail.com">Mail</a></li>
+        </ul>
+    </footer>
+</body>
+
+</html>
