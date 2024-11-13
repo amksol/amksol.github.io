@@ -91,7 +91,7 @@
                         transactionId: sessionData.transactionId,
                         totalAmount: sessionData.totalAmount,
                         currency: sessionData.currency,
-                        customer_email: sessionData.customer_email,
+                        // optional email send, need consent customerEmail: sessionData.customer_email,
                         lineItems: sessionData.line_items,
                     });
 
@@ -99,6 +99,7 @@
                     fbq('track', 'Purchase', {
                         value: sessionData.totalAmount,
                         currency: sessionData.currency,
+                        // optional email send, need consent email: sessionData.customer_email,
                     });
 
                 } catch (error) {
