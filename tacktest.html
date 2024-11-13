@@ -55,14 +55,16 @@ window.onload = async function () {
         },
       });
 
+
+      // Step 4: Handle the response from the Worker
       if (!response.ok) {
         throw new Error('Failed to retrieve session data from Worker');
       }
 
-      const sessionData = await response.json();
-      console.log('Session Data:', sessionData); // Log the session data for debugging
+      const sessionData = await response.json();  // Parse the response as JSON
+      console.log('Session Data:', sessionData);   // Log the session data for debugging
 
-      // Optionally, send data to Google Tag Manager's dataLayer for tracking
+      // Step 5: Send the session data to Google Tag Manager (or other analytics tools)
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
         event: 'purchase',
