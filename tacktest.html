@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="sv" style="background-color: #0F1732;">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,53 +35,52 @@
   })(window, document, 'script', 'dataLayer', 'GTM-KXDDQP56');</script>
 <!-- End Google Tag Manager -->
 <script src="https://js.stripe.com/v3/"></script>
-
 <script>
-  // Capture the session_id from the URL
-  function getSessionId() {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get('checkout_session_id');
-  }
+// Example of handling the redirect from Stripe with session_id
+window.onload = async function () {
+  // Step 1: Extract session_id from the URL (e.g., /success?session_id=cs_test_abc123)
+  const urlParams = new URLSearchParams(window.location.search);
+  const sessionId = urlParams.get('checkout_session_id'); // Get the session_id from the URL
 
-  const sessionId = getSessionId();
-  
   if (sessionId) {
-    // Fetch the session data from Stripe
-    fetch(`https://api.stripe.com/v1/checkout/sessions/${sessionId}`, {
-      method: 'GET',
-      headers: {
-        'Authorization': 'pk_test_51NBYaWKVx4lZniIcP8d263oIUr1RbTSTrw2e8ewcqzli1YRJ5amyHuBKXq7wxa6nGTUIxGimMDrIGGfO7eTgk9yR00Ag7BG4MM',
-      }
-    })
-    .then(response => response.json())
-    .then(session => {
-      const transactionData = {
-        transactionId: session.id,
-        transactionTotal: session.amount_total / 100, // amount is in cents
-        transactionCurrency: session.currency,
-        transactionProducts: session.line_items.data.map(item => ({
-          productId: item.product_id,
-          productName: item.name,
-          productPrice: item.amount / 100, // price in USD or other currency
-          quantity: item.quantity
-        }))
-      };
+    try {
+      // Step 2: Append the session_id to the Cloudflare Worker URL
+      const workerUrl = `https://weathered-sky-4c4f.vatmarker.workers.dev?checkout_session_id=${sessionId}`;
 
-      // Push this data into the dataLayer for GTM
+      // Step 3: Make a request to your Cloudflare Worker
+      const response = await fetch(workerUrl, {
+        method: 'GET', // Use GET to pass session_id as a query parameter
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to retrieve session data from Worker');
+      }
+
+      const sessionData = await response.json();
+      console.log('Session Data:', sessionData); // Log the session data for debugging
+
+      // Optionally, send data to Google Tag Manager's dataLayer for tracking
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
         event: 'purchase',
-        transactionId: transactionData.transactionId,
-        transactionTotal: transactionData.transactionTotal,
-        transactionCurrency: transactionData.transactionCurrency,
-        transactionProducts: transactionData.transactionProducts
+        transactionId: sessionData.transactionId,
+        totalAmount: sessionData.totalAmount,
+        currency: sessionData.currency,
+        lineItems: sessionData.line_items,
       });
-    })
-    .catch(error => {
-      console.error('Error fetching Stripe session:', error);
-    });
+
+    } catch (error) {
+      console.error('Error fetching session data from Worker:', error);
+    }
+  } else {
+    console.error('session_id not found in URL');
   }
-</script>
+};
+
+  </script>
 
 </head>
 
