@@ -111,9 +111,66 @@
     </stripe-pricing-table>
     <main>
         <section>
-            <p><i>Du kan alltid välja ett valfritt belopp på vår <a style="text-decoration: underline;" target="_blank"
-                        href="https://chuffed.org/project/aterstallvatmarker">Chuffed-insamling här</a>.
-                </i></p>
+            <h2>Valfritt belopp</h2>
+
+            <form id="payment-form">
+              <label for="price">Skriv in belopp (SEK):</label>
+              <input type="number" id="price" name="price" placeholder="400kr" required min="1">
+              <button type="submit" id="submit">Bli månadsgivare!</button>
+            </form>
+          
+            <div id="error-message"></div>
+          
+            <script>
+              const stripe = Stripe('pk_test_51NBYaWKVx4lZniIcP8d263oIUr1RbTSTrw2e8ewcqzli1YRJ5amyHuBKXq7wxa6nGTUIxGimMDrIGGfO7eTgk9yR00Ag7BG4MM'); // Your Stripe public key
+              const paymentForm = document.getElementById('payment-form');
+          
+              // Form submission handler
+              paymentForm.addEventListener('submit', async (event) => {
+                event.preventDefault();  // Prevent default form submission
+          
+                // Get the custom price entered by the user
+                const price = parseFloat(document.getElementById('price').value);
+                
+                // Basic validation to ensure the price is valid
+                if (!price || price <= 0) {
+                  document.getElementById('error-message').textContent = 'Please enter a valid price.';
+                  return;
+                }
+          
+                try {
+                  // Send the custom price to the Cloudflare Worker to create a Stripe Checkout session
+                  const response = await fetch('https://winter-feather-0c39.vatmarker.workers.dev/', {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ price })  // Send the price in the request body
+                  });
+          
+                  const sessionData = await response.json();
+          
+                  // Handle potential errors from the Worker
+                  if (sessionData.error) {
+                    document.getElementById('error-message').textContent = sessionData.error;
+                    return;
+                  }
+          
+                  // Redirect to the Stripe Checkout page
+                  const { error } = await stripe.redirectToCheckout({
+                    sessionId: sessionData.id,  // The session ID returned by the Cloudflare Worker
+                  });
+          
+                  if (error) {
+                    // Display any errors that occur during the redirect
+                    document.getElementById('error-message').textContent = error.message;
+                  }
+                } catch (error) {
+                  console.error('Error:', error);
+                  document.getElementById('error-message').textContent = 'Something went wrong. Please try again.';
+                }
+              });
+            </script>
         </section>
         <section>
             <h2>Våra givare</h2>
