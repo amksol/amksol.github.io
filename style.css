@@ -1,14 +1,17 @@
 /** MAIN STYLES **/
+html {
+  background-color: #0F1732;
+}
 body {
   font-size: calc(15px + 0.390625vw);
   font-family: "Open-Sans", Arial, sans-serif;
   margin: 0;
   padding: 0;
-  color: #f7f8ec;
+  color: #dcdcdc;
 }
 
 a {
-  color: #f7f8ec;
+  color: #dcdcdc;
 }
 
 main {
@@ -279,7 +282,6 @@ header button svg {
     background-color: #ffffff;
     text-align: center;
   }
-}
   .toggle-menu {
     display: block;
     background-color: #ffffff;
