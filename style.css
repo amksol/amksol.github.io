@@ -5,14 +5,16 @@
   --primary-color-hover: hsl(199, 100%, 27%);
   --background-color: #0F1732;
   --text-color: #dcdcdc;
-  --font-family: 'Arial', sans-serif;
+  --font-family: "Open-Sans", Arial, sans-serif;
 }
+
 html {
   background-color: var(--background-color);
 }
+
 body {
   font-size: calc(15px + 0.390625vw);
-  font-family: "Open-Sans", Arial, sans-serif;
+  font-family: var(--font-family);
   margin: 0;
   padding: 0;
   color: var(--text-color);
@@ -131,10 +133,10 @@ footer ul li a {
 #chuffed_frame {
   margin-left: 10px;
 }
+
 /** range slider **/
 
-#valfrittbelopp
-{
+#valfrittbelopp {
   padding: 10px;
   border: 1px solid color(srgb 1 1 1 / 0.2);
   background-color: color(srgb 1 1 1 / 0.1);
@@ -224,18 +226,19 @@ input[type="range"]::-moz-range-thumb {
 
 @media (max-width: 600px) {
   .container {
-      padding: 15px;
+    padding: 15px;
   }
 
   h1 {
-      font-size: 1.2rem;
+    font-size: 1.2rem;
   }
 
   .pay-button {
-      padding: 15px;
-      font-size: 1rem;
+    padding: 15px;
+    font-size: 1rem;
   }
 }
+
 /** fit to width text credit https://kizu.dev/fit-to-width/ **/
 .text-fit {
   display: flex;
@@ -394,6 +397,7 @@ header button svg {
     background-color: #ffffff;
     text-align: center;
   }
+
   .toggle-menu {
     display: block;
     background-color: #ffffff;
@@ -427,10 +431,12 @@ header button svg {
   .navigation a {
     font-size: 1rem;
   }
+
   /** responsive stripe **/
   .PriceColumn {
     order: 2;
   }
+
   .PriceColumn.is-highlight {
     order: 1;
   }
