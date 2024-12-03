@@ -22,14 +22,15 @@ window.onload = async function () {
             if (!response.ok) {
                 throw new Error('Failed to retrieve session data from Worker');
             }
+
+            const sessionData = await response.json();  // Parse the response as JSON
+            console.log('Session Data:', sessionData);   // Log the session data for debugging
+            
             // Store variables localStorage for cross-script access
             sessionStorage.setItem('transactionId', sessionData.transactionId);
             sessionStorage.setItem('totalAmount', sessionData.totalAmount);
             sessionStorage.setItem('currency', sessionData.currency);
             sessionStorage.setItem('customerEmail', sessionData.customer_email);
-
-            const sessionData = await response.json();  // Parse the response as JSON
-            console.log('Session Data:', sessionData);   // Log the session data for debugging
 
             // Step 5: Send the session data to Google Tag Manager (or other analytics tools)
             window.dataLayer = window.dataLayer || [];
