@@ -22,6 +22,11 @@ window.onload = async function () {
             if (!response.ok) {
                 throw new Error('Failed to retrieve session data from Worker');
             }
+            // Store variables localStorage for cross-script access
+            sessionStorage.setItem('transactionId', sessionData.transactionId);
+            sessionStorage.setItem('totalAmount', sessionData.totalAmount);
+            sessionStorage.setItem('currency', sessionData.currency);
+            sessionStorage.setItem('customerEmail', sessionData.customer_email);
 
             const sessionData = await response.json();  // Parse the response as JSON
             console.log('Session Data:', sessionData);   // Log the session data for debugging
@@ -34,7 +39,7 @@ window.onload = async function () {
                 totalAmount: sessionData.totalAmount,
                 currency: sessionData.currency,
                 // optional email send, need consent customerEmail: sessionData.customer_email,
-                lineItems: sessionData.line_items,
+                //lineItems: sessionData.line_items,
             });
 
             // Send purchase data to Meta Pixel
