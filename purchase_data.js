@@ -29,7 +29,7 @@ window.onload = async function () {
                 totalAmount: sessionData.totalAmount,
                 currency: sessionData.currency,
                 customerEmail: sessionData.customer_email,
-                customerName: sessionData.name.customer_details.name,
+                customerName: sessionData?.name?.customer_details?.name || "En god klimatvän", //Before accessing deeply nested properties, ensure the object structure exists to avoid runtime errors. Use optional chaining (?.) if supported
             };
 
             console.log('Session Data:', sessionData);   // Log the session data for debugging
