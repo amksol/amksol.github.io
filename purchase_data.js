@@ -9,7 +9,7 @@ window.onload = async function () {
             // Step 2: Append the session_id to the Cloudflare Worker URL
             const workerUrl = `https://weathered-sky-4c4f.vatmarker.workers.dev?checkout_session_id=${sessionId}`;
 
-            // Step 3: Make a request to your Cloudflare Worker
+            // Step 3: Make a request to Cloudflare Worker
             const response = await fetch(workerUrl, {
                 method: 'GET', // Use GET to pass session_id as a query parameter
                 headers: {
@@ -41,15 +41,12 @@ window.onload = async function () {
                 transactionId: sessionData.transactionId,
                 totalAmount: sessionData.totalAmount,
                 currency: sessionData.currency,
-                // optional email send, need consent customerEmail: sessionData.customer_email,
-                //lineItems: sessionData.line_items,
             });
 
-            // Send purchase data to Meta Pixel
+            // 5b. Send purchase data to Meta Pixel
             fbq('track', 'Purchase', {
                 value: sessionData.totalAmount,
                 currency: sessionData.currency,
-                // optional email send, need consent email: sessionData.customer_email,
             });
 
 
