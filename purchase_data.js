@@ -24,13 +24,15 @@ window.onload = async function () {
             }
 
             const sessionData = await response.json();  // Parse the response as JSON
+            window.sessionData = {  // Store variables localStorage for cross-script access
+                transactionId: sessionData.transactionId,
+                totalAmount: sessionData.totalAmount,
+                currency: sessionData.currency,
+                customerEmail: sessionData.customer_email,
+                customerName: sessionData.name.customer_details.name,
+            };
+
             console.log('Session Data:', sessionData);   // Log the session data for debugging
-            
-            // Store variables localStorage for cross-script access
-            sessionStorage.setItem('transactionId', sessionData.transactionId);
-            sessionStorage.setItem('totalAmount', sessionData.totalAmount);
-            sessionStorage.setItem('currency', sessionData.currency);
-            sessionStorage.setItem('customerEmail', sessionData.customer_email);
 
             // Step 5: Send the session data to Google Tag Manager (or other analytics tools)
             window.dataLayer = window.dataLayer || [];
@@ -49,6 +51,7 @@ window.onload = async function () {
                 currency: sessionData.currency,
                 // optional email send, need consent email: sessionData.customer_email,
             });
+
 
         } catch (error) {
             console.error('Error fetching session data from Worker:', error);
