@@ -1,4 +1,4 @@
-// Example of handling the redirect from Stripe with session_id
+//requirements: meta pixel, google analytics & stripe js must be loaded.
 window.onload = async function () {
     // Step 1: Extract session_id from the URL (e.g., /success?session_id=cs_test_abc123)
     const urlParams = new URLSearchParams(window.location.search);
