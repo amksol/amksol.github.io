@@ -39,8 +39,8 @@ window.onload = async function () {
             window.dataLayer.push({
                 event: 'purchase',
                 transactionId: sessionData.transactionId,
-                totalAmount: sessionData.totalAmount,
-                currency: sessionData.currency,
+                transactionTotal: sessionData.totalAmount,
+                transactionCurrency: sessionData.currency,
             });
 
             // 5b. Send purchase data to Meta Pixel
