@@ -130,10 +130,6 @@ footer ul li a {
   text-transform: lowercase;
 }
 
-#chuffed_frame {
-  margin-left: 10px;
-}
-
 /** range slider **/
 
 #valfrittbelopp {
@@ -374,7 +370,7 @@ header button svg {
 
 .flex_2_columns {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
 }
 
 /* ****** ****** */
