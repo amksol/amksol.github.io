@@ -371,6 +371,7 @@ header button svg {
 .flex_2_columns {
   display: flex;
   flex-wrap: wrap-reverse;
+  justify-content: space-between;
 }
 
 /* ****** ****** */
